@@ -2,8 +2,11 @@ source "https://rubygems.org"
 
 ruby '2.6.3'
 
+gem 'activerecord'
 gem 'dotenv'
+gem 'rake'
 gem 'sinatra'
+gem 'sinatra-activerecord'
 
 group :test do
   gem 'capybara'

@@ -1,0 +1,20 @@
+development:
+  database: supremebnb_dev
+  adapter: postgresql
+  encoding: unicode
+  pool: 2
+  timeout: 5000
+
+test:
+  database: supremebnb_test
+  adapter: postgresql
+  encoding: unicode
+  pool: 2
+  timeout: 5000
+
+production:
+  database: supremebnb
+  adapter: postgresql
+  encoding: unicode
+  pool: 2
+  timeout: 5000
