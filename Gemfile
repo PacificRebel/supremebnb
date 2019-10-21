@@ -7,6 +7,7 @@ gem 'dotenv'
 gem 'rake'
 gem 'sinatra'
 gem 'sinatra-activerecord'
+gem 'pg'
 
 group :test do
   gem 'capybara'
