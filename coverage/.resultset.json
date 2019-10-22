@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/kevin/projects/makers/week_6/supremebnb/spec/booking_spec.rb": [
+      "/Users/student/Desktop/Projects/supremebnb/spec/booking_spec.rb": [
         1,
         1,
         1,
@@ -29,7 +29,7 @@
         null,
         null
       ],
-      "/Users/kevin/projects/makers/week_6/supremebnb/spec/features/list_spaces_spec.rb": [
+      "/Users/student/Desktop/Projects/supremebnb/spec/features/list_spaces_spec.rb": [
         1,
         1,
         1,
@@ -38,33 +38,32 @@
         1,
         1,
         null,
-        1,
-        0,
-        0,
-        null,
-        null
-      ],
-      "/Users/kevin/projects/makers/week_6/supremebnb/spec/features/new_space_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/kevin/projects/makers/week_6/supremebnb/spec/space_spec.rb": [
+      "/Users/student/Desktop/Projects/supremebnb/spec/features/new_space_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Desktop/Projects/supremebnb/spec/space_spec.rb": [
         1,
         3,
         null,
@@ -86,7 +85,7 @@
         null,
         null
       ],
-      "/Users/kevin/projects/makers/week_6/supremebnb/spec/user_spec.rb": [
+      "/Users/student/Desktop/Projects/supremebnb/spec/user_spec.rb": [
         1,
         null,
         1,
@@ -100,6 +99,6 @@
         null
       ]
     },
-    "timestamp": 1571747469
+    "timestamp": 1571752586
   }
 }

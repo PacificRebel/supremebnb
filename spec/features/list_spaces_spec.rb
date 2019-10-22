@@ -1,6 +1,6 @@
 feature 'list spaces' do
   scenario 'user searches for spaces' do
-    Space.new(name: 'MySpace', description: 'A cool space', price: 100, start_date: '2019-10-22', end_date: '2020-10-22')
+    Space.create(name: 'MySpace', description: 'A cool space', price: 100, start_date: '2019-10-22', end_date: '2020-10-22')
 
     visit '/spaces'
     fill_in 'Date', with: '2019-12-25'

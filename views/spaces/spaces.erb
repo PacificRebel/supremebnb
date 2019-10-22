@@ -3,3 +3,13 @@
   <input id='date-of-stay' type='date' name='date'>
   <button type='submit' value='Submit'>Submit</button>
 </form>
+
+<% if @spaces %>
+<% @spaces.each do |space| %>
+  <div> <%= space.name %>
+    <p> <%= space.description %> </p>  
+    <p> <%= space.price %> </p>  
+  </div>
+
+<%end%>
+<% end %>
