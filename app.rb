@@ -13,7 +13,7 @@ class SupremeBNB < Sinatra::Base
   
   get '/spaces' do
     date = params[:date]
-    @spaces = Space.where("'#{date}' BETWEEN start_date AND end_date") if date
+    @spaces = Space.available(date) if date
     erb :'spaces/spaces'
   end
 
