@@ -9,6 +9,10 @@ class SupremeBNB < Sinatra::Base
   get '/' do
     erb :index
   end
+  
+  get '/spaces' do
+    erb :'spaces/spaces'
+  end
 
   post '/users' do
     User.create(username: params[:username] )
