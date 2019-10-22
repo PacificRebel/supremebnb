@@ -1,3 +1,5 @@
+ENV["RACK_ENV"]="test"
+
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require_relative './features/web_helper'
 
@@ -6,6 +8,13 @@ require 'simplecov'
 require 'simplecov-console'
 
 Capybara.app = SupremeBNB
+
+RSpec.configure do |config|
+ config.before :each do
+   Space.delete_all
+   User.delete_all
+ end
+end
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -91,4 +100,16 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+end
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+ SimpleCov::Formatter::Console,
+ # Want a nice code coverage website? Uncomment this next line!
+ # SimpleCov::Formatter::HTMLFormatter
+])
+SimpleCov.start
+RSpec.configure do |config|
+ config.after(:suite) do
+   Space.delete_all
+   User.delete_all
+ end
 end
