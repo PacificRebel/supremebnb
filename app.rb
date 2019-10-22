@@ -18,7 +18,7 @@ class SupremeBNB < Sinatra::Base
     erb :'spaces/new'
   end
 
-  post '/spaces/new' do
+  post '/spaces' do
     Space.create(name: params[:name], description: params[:description], price: params[:price], start_date: params[:start_date], end_date: params[:end_date])
     p params
     redirect '/'
