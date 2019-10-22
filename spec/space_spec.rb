@@ -10,7 +10,6 @@ describe Space do
     end
 
     it 'creates time object from start and end date' do
-      p space.start_date.class
       expect(space.start_date.day).to eq 5
       expect(space.start_date.month).to eq 6
       expect(space.start_date.year).to eq 2019
