@@ -11,8 +11,8 @@ puts Space.all
     space = Space.all.first
     expect(space.name).to eq "House"
     expect(space.description).to eq "great"
-    expect(space.price).to eq "100"
-    expect(space.start_date).to eq "2019-11-27"
-    expect(space.end_date).to eq "2019-11-30"
+    expect(space.price).to eq 100
+    expect(space.start_date).to be_a Date
+    expect(space.end_date).to be_a Date
   end
 end
