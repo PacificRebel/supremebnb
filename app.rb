@@ -4,6 +4,7 @@ require_relative 'lib/space'
 require_relative 'lib/booking'
 
 class SupremeBNB < Sinatra::Base
+  enable :sessions
   register Sinatra::ActiveRecordExtension
 
   get '/' do
@@ -28,6 +29,11 @@ class SupremeBNB < Sinatra::Base
   post '/spaces' do
     Space.create(name: params[:name], description: params[:description], price: params[:price], start_date: params[:start_date], end_date: params[:end_date])
     redirect '/'
+  end
+
+  post '/spaces/:id/bookings' do
+    guest_id = params[:user_id] || User.all.first.id
+    Booking.create(space_id: params[:id], guest_id: guest_id, date: params[:date] )
   end
 
 end

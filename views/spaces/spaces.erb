@@ -6,9 +6,13 @@
 
 <% if @spaces %>
 <% @spaces.each do |space| %>
-  <div> <%= space.name %>
+  <div>
+    <h3> <%= space.name %> </h3>
     <p> <%= space.description %> </p>  
     <p> <%= space.price %> </p>  
+    <form action='/spaces/<%= space.id %>/bookings' method='post'>
+      <button type='submit' name='book'>Book</button>
+    </form>
   </div>
 
 <%end%>
