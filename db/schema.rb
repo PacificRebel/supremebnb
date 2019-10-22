@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_121740) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "bookings", "bookings", column: "space_id"
+  add_foreign_key "bookings", "spaces", column: "space_id"
   add_foreign_key "bookings", "users", column: "guest_id"
   add_foreign_key "spaces", "users", column: "host_id"
 end

@@ -1,7 +1,8 @@
 class CreateBookingsTable < ActiveRecord::Migration[6.0]
   def change
     create_table :bookings do |t|
-      t.references :bookings, foreign_key: { to_table: :spaces }, index: true
+      # add_foreign_key :bookings, :spaces
+      t.references :spaces, foreign_key: { to_table: :bookings }, index: true
       t.timestamps
       t.date :date
       t.boolean :approved
