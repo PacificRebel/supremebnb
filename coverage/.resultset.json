@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/heli/Projects/supremebnb/spec/booking_spec.rb": [
+      "/Users/student/Documents/Makers/weekly-challenges/supremebnb/spec/booking_spec.rb": [
         1,
         1,
         1,
@@ -29,7 +29,7 @@
         null,
         null
       ],
-      "/Users/heli/Projects/supremebnb/spec/features/new_space_spec.rb": [
+      "/Users/student/Documents/Makers/weekly-challenges/supremebnb/spec/features/new_space_spec.rb": [
         1,
         1,
         1,
@@ -49,7 +49,18 @@
         null,
         null
       ],
-      "/Users/heli/Projects/supremebnb/spec/space_spec.rb": [
+      "/Users/student/Documents/Makers/weekly-challenges/supremebnb/spec/features/view_bookings_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Makers/weekly-challenges/supremebnb/spec/space_spec.rb": [
         1,
         3,
         null,
@@ -71,7 +82,7 @@
         null,
         null
       ],
-      "/Users/heli/Projects/supremebnb/spec/user_spec.rb": [
+      "/Users/student/Documents/Makers/weekly-challenges/supremebnb/spec/user_spec.rb": [
         1,
         null,
         1,
@@ -85,6 +96,6 @@
         null
       ]
     },
-    "timestamp": 1571746561
+    "timestamp": 1571750203
   }
 }
