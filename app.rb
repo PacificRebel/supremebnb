@@ -13,6 +13,7 @@ class SupremeBNB < Sinatra::Base
   
   get '/spaces' do
     date = params[:date]
+    session[:date] = date
     @spaces = Space.available(date) if date
     erb :'spaces/spaces'
   end
@@ -27,13 +28,24 @@ class SupremeBNB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(name: params[:name], description: params[:description], price: params[:price], start_date: params[:start_date], end_date: params[:end_date])
+    Space.create(
+      name: params[:name],
+      description: params[:description],
+      price: params[:price],
+      start_date: params[:start_date],
+      end_date: params[:end_date]
+    )
     redirect '/'
   end
 
   post '/spaces/:id/bookings' do
     guest_id = params[:user_id] || User.all.first.id
-    Booking.create(space_id: params[:id], guest_id: guest_id, date: params[:date] )
+    Booking.create(
+      space_id: params[:id],
+      guest_id: guest_id,
+      date: session[:date]
+    )
+    redirect '/'
   end
 
 end

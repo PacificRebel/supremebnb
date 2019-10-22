@@ -2,8 +2,8 @@ describe Booking do
   space = Space.new
   user = User.new
   date = "2019-12-25"
-
   subject(:booking) { described_class.new(space_id: space.id, guest_id: user.id, date: date) }
+  
   it 'knows its space_id' do
     expect(subject.space_id).to eq space.id
   end
@@ -31,7 +31,7 @@ describe Booking do
     end
     it 'returns true if approved bookings exist' do
       booking.approved!
-      expect(Booking.booked?(space.id, date)).to eq false
+      expect(Booking.booked?(space.id, date)).to eq true
     end
   end
 end
