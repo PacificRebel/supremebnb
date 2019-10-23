@@ -1,0 +1,21 @@
+<% if @user %>
+  <h1>Welcome back, <%= @user.username %>!</h1> 
+<% end %>
+<form action='/spaces'>
+  <label for='date-of-stay'>Date</label>
+  <input id='date-of-stay' type='date' name='date' value=<%= @date %>>
+  <button type='submit' value='Submit'>Submit</button>
+</form>
+<% if @spaces %>
+  <% @spaces.each do |space| %>
+    <div>
+      <h3> <%= space.name %> </h3>
+      <p> <%= space.description %> </p>  
+      <p> <%= space.price %> </p>  
+      <form action='/spaces/<%= space.id %>/bookings' method='post'>
+        <button type='submit' name='book'>Book</button>
+      </form>
+    </div>
+
+  <%end%>
+<% end %>
