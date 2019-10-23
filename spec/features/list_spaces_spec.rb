@@ -19,6 +19,7 @@ feature 'list spaces' do
     visit '/spaces'
     fill_in 'Date', with: '2019-12-25'
     click_button 'Submit'
+    expect(page).to have_content "Date"
     expect(page).to_not have_content('MySpace')
     expect(page).to_not have_content('A cool space')
     expect(page).to_not have_content('100')

@@ -5,8 +5,7 @@ class Booking < ActiveRecord::Base
   end
 
   def self.booked?(space_id, date)
-    return true unless Booking.where(space_id: space_id, approved: true, date: date).length.zero?
-
-    false
+    return false if Booking.where("space_id = #{space_id} AND approved = TRUE AND date = '#{date}'").length.zero?
+    true
   end
 end
