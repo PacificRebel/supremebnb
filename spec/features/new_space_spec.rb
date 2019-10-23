@@ -7,7 +7,6 @@ feature 'Add new space listing' do
     fill_in "start_date", with: "2019-11-27"
     fill_in "end_date", with: "2019-11-30"
     click_button "Submit"
-puts Space.all
     space = Space.all.first
     expect(space.name).to eq "House"
     expect(space.description).to eq "great"
