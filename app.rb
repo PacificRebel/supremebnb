@@ -25,7 +25,7 @@ class SupremeBNB < Sinatra::Base
 
   post '/users' do
     User.create(username: params[:username] )
-    redirect '/'
+    redirect '/sessions/new', 307 
   end
 
   get '/spaces/new' do
