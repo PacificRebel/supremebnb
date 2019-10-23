@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2019_10_22_121740) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "space_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "date"
     t.boolean "approved"
     t.bigint "guest_id"
+    t.bigint "space_id"
     t.index ["guest_id"], name: "index_bookings_on_guest_id"
     t.index ["space_id"], name: "index_bookings_on_space_id"
   end
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_121740) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "bookings", "bookings", column: "space_id"
+  add_foreign_key "bookings", "spaces"
   add_foreign_key "bookings", "users", column: "guest_id"
   add_foreign_key "spaces", "users", column: "host_id"
 end

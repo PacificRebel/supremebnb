@@ -11,6 +11,7 @@ Capybara.app = SupremeBNB
 
 RSpec.configure do |config|
  config.before :each do
+   Booking.delete_all
    Space.delete_all
    User.delete_all
  end
@@ -109,6 +110,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 RSpec.configure do |config|
  config.after(:suite) do
+   Booking.delete_all
    Space.delete_all
    User.delete_all
  end
