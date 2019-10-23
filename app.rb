@@ -44,13 +44,14 @@ class SupremeBNB < Sinatra::Base
       description: params[:description],
       price: params[:price],
       start_date: params[:start_date],
-      end_date: params[:end_date]
+      end_date: params[:end_date],
+      host_id: session[:user_id]
     )
     redirect '/'
   end
 
   post '/spaces/:id/bookings' do
-    guest_id = params[:user_id] || User.all.first.id
+    guest_id = session[:user_id]
     Booking.create(
       space_id: params[:id],
       guest_id: guest_id,
