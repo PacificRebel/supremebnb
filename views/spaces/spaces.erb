@@ -1,6 +1,10 @@
-  <% if @user %>
+<% if @user %>
+  <h1>Welcome back, <%= @user.username %>!</h1> 
+<% end %>
+<% if @user %>
   <a href=/users/<%= @user.id %>/bookings type='submit' name='book'>Your Bookings</a>
-  <% end %>
+<% end %>
+
 <form action='/spaces'>
   <label for='date-of-stay'>Date</label>
   <input id='date-of-stay' type='date' name='date' value=<%= @date %>>
