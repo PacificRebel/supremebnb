@@ -7,8 +7,8 @@ class Space < ActiveRecord::Base
     end
     return spaces.first.nil? ? nil : spaces
   end
-  
-  private 
+
+  private
 
   def self.booking_class
     Booking

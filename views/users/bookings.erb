@@ -1,3 +1,13 @@
-<%= @bookings.first.space.name %>
-<%= @bookings.first.date %>
-<%= @bookings.first.guest.username %>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li class="booking" id="booking-<%= booking.id %>">
+      <%= booking.space.name %>
+      <%= booking.date %>
+      <%= booking.guest.username %>
+      <form action="/spaces/<%= booking.space_id %>/bookings/<%= booking.id %>" method="post">
+        <input type='hidden' name='_method' value='PATCH' />
+        <input type="submit" value="Approve" />
+      </form>
+    </li>
+    <% end %>
+</ul>
