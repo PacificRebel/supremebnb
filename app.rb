@@ -60,4 +60,11 @@ class SupremeBNB < Sinatra::Base
     redirect '/'
   end
 
+  get '/users/:id/bookings' do
+    @spaces = Space.where(host_id: params[:id])
+    @bookings = []
+    @spaces.each { |space| @bookings += Booking.where(space_id: space.id) }
+    erb :'users/bookings'
+  end
+
 end
