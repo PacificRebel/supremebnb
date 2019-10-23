@@ -1,5 +1,6 @@
 feature 'Add new space listing' do
   scenario 'user can add space' do
+    zaira = User.create(username: 'zaira')
     visit '/spaces/new'
     fill_in "name", with: "House"
     fill_in "description", with: "great"

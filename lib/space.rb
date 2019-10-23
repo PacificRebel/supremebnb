@@ -5,11 +5,10 @@ class Space < ActiveRecord::Base
     spaces = spaces.map do |space|
       space unless self.booking_class.booked?(space.id, date)
     end
-    puts "#{spaces.first} in loop"
     return spaces.first.nil? ? nil : spaces
   end
-  
-  private 
+
+  private
 
   def self.booking_class
     Booking

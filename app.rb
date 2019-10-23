@@ -4,7 +4,7 @@ require_relative 'lib/space'
 require_relative 'lib/booking'
 
 class SupremeBNB < Sinatra::Base
-  enable :sessions
+  enable :sessions, :method_override
   register Sinatra::ActiveRecordExtension
 
   get '/' do
@@ -14,6 +14,7 @@ class SupremeBNB < Sinatra::Base
   get '/spaces' do
     date = params[:date]
     session[:date] = date
+    @user = User.find(session[:user_id]) if session[:user_id]
     @spaces = Space.available(date) if date
     erb :'spaces/spaces'
   end
@@ -33,7 +34,8 @@ class SupremeBNB < Sinatra::Base
       description: params[:description],
       price: params[:price],
       start_date: params[:start_date],
-      end_date: params[:end_date]
+      end_date: params[:end_date],
+      host_id: session[:user_id] || User.all.first.id
     )
     redirect '/'
   end
@@ -52,7 +54,13 @@ class SupremeBNB < Sinatra::Base
     @spaces = Space.where(host_id: params[:id])
     @bookings = []
     @spaces.each { |space| @bookings += Booking.where(space_id: space.id) }
+    p @bookings
     erb :'users/bookings'
+  end
+
+  patch '/spaces/:space_id/bookings/:booking_id' do
+    Booking.find(params[:booking_id]).approved!
+    redirect '/'
   end
 
 end
