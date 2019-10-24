@@ -20,8 +20,8 @@ class SupremeBNB < Sinatra::Base
     erb :'spaces/spaces'
   end
 
-  get '/users/new' do
-    erb :'users/new'
+  get '/users/login' do
+    erb :'users/login'
   end
 
   post '/users' do

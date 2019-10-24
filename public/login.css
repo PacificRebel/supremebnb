@@ -1,0 +1,45 @@
+body {
+  background-color: #b4cce4;
+}
+
+.login-center-div {
+  padding-top: 20vh;
+  text-align: center;
+}
+
+.one-padding {
+  padding: 1%;
+  padding-left: 0;
+  min-width: 10vw;
+}
+
+.login-form-container {
+  background-color: white;
+  border-style: solid;
+  width: 30vw;
+  height: 40vh;
+  padding-top: 2%;
+  text-align: center;
+}
+
+.login-input {
+  width: 80%;
+  padding: 2%;
+  border-style: solid;
+  border-color: black;
+}
+
+.login-button {
+  border-radius: 0;
+}
+
+.right-border {
+  border-right: black;
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+
+.top-right {
+  padding-top: 2%;
+  text-align: center;
+}
