@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../login.css">
+  </head>
+  <body>
+    <header>
+      <nav clas='navbar'>
+        <nav class='navbar-nav navbar-right'>
+          <div class='container top-right'>
+            <div class='row'>
+              <div class='col'></div>
+              <div class='col-1 right-border one-padding'>
+                <a href='/about'>About</a>
+              </div>
+              <div class='col-1 one-padding'>
+                <a href='/'>Sign up</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </nav>
+    </header>
+    <div class='login-center-div'>
+      <h3>Log in to SupremeBnB</h3>
+      <div class='container login-form-container'>
+        <form action='/sessions/new' method='post'>
+          <div class="form-group">
+            <label for="username"><h5>Username</h5></label> 
+            <p>
+              <input class='login-input' id="username" name="username" placeholder="Gary the Snail" type="text" class="form-control" required="required">
+            </p>
+          </div> 
+          <div class="form-group">
+            <button name="submit" type="submit" class="btn btn-primary login-button">Log in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" async defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" async defer></script>
+  </body>
+</html>
