@@ -1,0 +1,32 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #f2f6e9;
+  background-image: url("https://pictures.aqualivingvillas.com/vacation-rentals/golden-beach-house/large/goldenbeachhouse-3.jpg");
+  height: 100%;
+}
+/*--- navigation bar ---*/
+.navbar {
+  background: rgb(172, 42, 59);
+}
+.nav-link,
+.navbar-brand {
+  color: #fff;
+  cursor: pointer;
+}
+.nav-link {
+  margin-right: 1em !important;
+}
+.nav-link:hover {
+  color: #000;
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+h2, form {
+
+    font-family: 'Francois One', sans-serif;
+
+}
+
