@@ -15,8 +15,7 @@ class SupremeBNB < Sinatra::Base
     @user = User.find(session[:user_id]) if session[:user_id]
     date = params[:date]
     session[:date] = date
-    @user = User.find(session[:user_id]) if session[:user_id]
-    @spaces = Space.available(date) if date
+    date ? (@spaces = Space.available(date)) : (@spaces = Space.all)
     erb :'spaces/spaces'
   end
 
@@ -48,7 +47,8 @@ class SupremeBNB < Sinatra::Base
       end_date: params[:end_date],
       host_id: session[:user_id]
     )
-    redirect '/spaces'
+    
+    redirect "/spaces"
   end
 
   post '/spaces/:id/bookings' do
@@ -58,7 +58,7 @@ class SupremeBNB < Sinatra::Base
       guest_id: guest_id,
       date: session[:date]
     )
-    redirect '/'
+    redirect '/spaces'
   end
 
   get '/users/:id/bookings' do

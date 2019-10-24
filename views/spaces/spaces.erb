@@ -29,7 +29,8 @@
      </div>
      <div class="col-8">
        <% if @user %>
-         <a href=/users/<%= @user.id %>/bookings class='btn' type='submit' name='book'>Your Bookings</a>
+         <a href=/users/<%= @user.id %>/bookings type='submit' name='book'>Your bookings</a>
+         <a href=/spaces/new type='submit' name='book'>List your space</a>
        <% end %>
 
        <form action='/spaces'>
@@ -55,7 +56,7 @@
               <div class="card-body">
                 <h5 class="card-title"><%= space.name %> </h5>
                 <p class="card-text"><%= space.description %></p>
-                <p class="card-text"><%= space.price %></p>
+                <p class="card-text">£<%= space.price %></p>
                 <form action='/spaces/<%= space.id %>/bookings' method='post'>
                   <button class="btn btn-primary" type='submit' name='book'>Book</button>
                 </form>
