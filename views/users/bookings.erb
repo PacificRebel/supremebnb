@@ -31,13 +31,19 @@
             <h5 class="mb-1"><%= booking.space.name %></h5>
             <h6 class="mb-1"><%= booking.date %></h6>
             <h6 class="mb-1"><%= booking.guest.username %></h6>
+            <% unless booking.approved? %>
             <form action="/spaces/<%= booking.space_id %>/bookings/<%= booking.id %>" method="post">
               <input type='hidden' name='_method' value='PATCH' />
               <input class='btn btn-success' type="submit" value="Approve" />
             </form>
             <form>
             <input class='btn btn-danger' type="submit" value="Deny" />
+
           </form>
+          <%else%>
+    <h5> Already approved! </h5>
+
+          <%end%>
           </li>
           <% end %>
       </ul>
