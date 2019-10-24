@@ -1,9 +1,48 @@
-<h1> SupremeBNB </h1>
-<h2>Sign up!</h2>
+<!DOCTYPE html>
+<html>
+ <head>
 
-<form action='/users' method='post'>
-  <input type='text' name='username'/>
-  <input type='submit' value='Submit'/>
-<form/>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title></title>
 
-<a href='/users/login' name='sign_in'>Existing users sign in</a>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="main-image.css">
+   <!-- this next thing needs to be linking to a new folder I create = public/login.css -->
+
+
+ </head>
+ <body>
+   <div class="background">
+    </div>
+   <div class="container background-image">
+     <div class="overlay"></div>
+<div class="description">
+   <h1> SupremeBNB </h1>
+   <h2> Sign me up! </h2>
+
+   <form action='/users' method='post'>
+     <input type='text' name='username'/>
+     <br>
+     <br>
+     <button class="btn btn-outline-secondary btn-lg">
+       Let's go
+       </button>
+     <!-- <input type='submit' value='Submit'/> -->
+   <form/>
+   <br>
+<br>
+   <a href='/users/login' name='sign_in'>Existing users sign in</a>
+</div>
+   </div>
+
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" async defer></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" async defer></script>
+   <!-- $(document).ready(function(){
+  $('.header').height($(window).height());
+}) -->
+ </body>
+</html>
+
