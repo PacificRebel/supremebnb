@@ -2,10 +2,9 @@
   function SwitchLogin(login, signup, link) {
     this.loginForm = login
     this.signUpForm = signup  
-    this.link = link
-    console.log(this.login)
-
-    this.link.on('click', this.switchForm)
+    this.link = link  
+    var self = this
+    this.link.on('click', function(){self.switchForm()})
   }
   SwitchLogin.prototype = {
     switchForm: function() {
