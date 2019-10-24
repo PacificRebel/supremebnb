@@ -14,32 +14,48 @@
 
 
  </head>
- <body>
-   <div class="background">
+<body>
+  <div class="background">
+  </div>
+  <div class="container background-image">
+  <div class="overlay"></div>
+    <div class="description">
+      <div id='signup-form'>
+        <h1 id='heading'> SupremeBNB </h1>
+        <h2 id='signup-heading'> Sign me up! </h2>
+        
+        <form action='/users' method='post'>
+          <input type='text' name='username'/>
+          <br>
+          <br>
+          <button class="btn btn-outline-secondary btn-lg">
+            Let's go
+          </button>
+        </form>
+      </div>
+      <div id='login-form'>
+        <h2 id='log-in-heading'>Log me in!</h2>
+        <form action='/sessions/new' method='post'>
+          <div class="form-group">
+            <p>
+              <input class='login-input' id="username" name="username" placeholder="Gary the Snail" type="text" class="form-control" required="required">
+            </p>
+          </div> 
+          <div class="form-group">
+            <button name="submit" type="submit" class="btn btn-primary login-button">Log in</button>
+          </div>
+        </form>
+      </div>
+      <br>
+      <br>
+      <a id='switch-form' href='javascript:void(0);' name='sign_in'>Existing users sign in</a>
     </div>
-   <div class="container background-image">
-     <div class="overlay"></div>
-<div class="description">
-   <h1> SupremeBNB </h1>
-   <h2> Sign me up! </h2>
-
-   <form action='/users' method='post'>
-     <input type='text' name='username'/>
-     <br>
-     <br>
-     <button class="btn btn-outline-secondary btn-lg">
-       Let's go
-       </button>
-     <!-- <input type='submit' value='Submit'/> -->
-   <form/>
-   <br>
-<br>
-   <a href='/users/login' name='sign_in'>Existing users sign in</a>
-</div>
-   </div>
-
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" async defer></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" async defer></script>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script src="src/indexFormHelper.js"></script>
+  <script src="src/index.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" async defer></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" async defer></script>
    <!-- $(document).ready(function(){
   $('.header').height($(window).height());
 }) -->
