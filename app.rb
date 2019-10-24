@@ -48,7 +48,7 @@ class SupremeBNB < Sinatra::Base
       end_date: params[:end_date],
       host_id: session[:user_id]
     )
-    redirect '/'
+    redirect '/spaces'
   end
 
   post '/spaces/:id/bookings' do
@@ -71,6 +71,6 @@ class SupremeBNB < Sinatra::Base
 
   patch '/spaces/:space_id/bookings/:booking_id' do
     Booking.find(params[:booking_id]).approved!
-    redirect '/'
+    redirect "/users/#{session[:user_id]}/bookings"
   end
 end

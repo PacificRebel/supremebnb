@@ -29,7 +29,7 @@
      </div>
      <div class="col-8">
        <% if @user %>
-         <a href=/users/<%= @user.id %>/bookings type='submit' name='book'>Your Bookings</a>
+         <a href=/users/<%= @user.id %>/bookings class='btn' type='submit' name='book'>Your Bookings</a>
        <% end %>
 
        <form action='/spaces'>
