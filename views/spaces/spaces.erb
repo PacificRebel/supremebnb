@@ -24,8 +24,8 @@
                 <p class="card-text"><%= space.description %></p>
                 <p class="card-text">£<%= space.price %></p>
                 <% if @date %>
-                  <form action='/spaces/<%= space.id %>/bookings' method='post'>
-                    <button class="btn btn-primary" type='submit' name='book'>Book</button>
+                  <form id='space-<%= space.id %>' action='/spaces/<%= space.id %>/bookings' method='post'>
+                    <button class="btn btn-primary book-btn" type='submit' name='book'>Book</button>
                   </form>
                 <% end %>
               </div>
