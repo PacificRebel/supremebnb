@@ -11,6 +11,11 @@ class SupremeBNB < Sinatra::Base
     erb :index
   end
 
+  get '/spaces/index' do
+    @user = User.find(session[:user_id]) if session[:user_id]
+    erb :'spaces/index'
+  end
+
   get '/spaces' do
     @user = User.find(session[:user_id]) if session[:user_id]
     @date = params[:date]
@@ -47,7 +52,7 @@ class SupremeBNB < Sinatra::Base
       end_date: params[:end_date],
       host_id: session[:user_id]
     )
-    
+
     redirect "/spaces"
   end
 
