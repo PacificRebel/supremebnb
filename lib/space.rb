@@ -1,4 +1,6 @@
 class Space < ActiveRecord::Base
+  belongs_to :host, class_name: :User
+  has_many :bookings
 
   def self.available(date)
     spaces = []

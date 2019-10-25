@@ -57,9 +57,11 @@
                 <h5 class="card-title"><%= space.name %> </h5>
                 <p class="card-text"><%= space.description %></p>
                 <p class="card-text">£<%= space.price %></p>
-                <form action='/spaces/<%= space.id %>/bookings' method='post'>
-                  <button class="btn btn-primary" type='submit' name='book'>Book</button>
-                </form>
+                <% if @date %>
+                  <form action='/spaces/<%= space.id %>/bookings' method='post'>
+                    <button class="btn btn-primary" type='submit' name='book'>Book</button>
+                  </form>
+                <% end %>
               </div>
             </div>
 

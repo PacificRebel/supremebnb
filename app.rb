@@ -13,9 +13,9 @@ class SupremeBNB < Sinatra::Base
 
   get '/spaces' do
     @user = User.find(session[:user_id]) if session[:user_id]
-    date = params[:date]
-    session[:date] = date
-    date ? (@spaces = Space.available(date)) : (@spaces = Space.all)
+    @date = params[:date]
+    session[:date] = @date
+    @date ? (@spaces = Space.available(@date)) : (@spaces = Space.all)
     erb :'spaces/spaces'
   end
 
@@ -62,10 +62,9 @@ class SupremeBNB < Sinatra::Base
   end
 
   get '/users/:id/bookings' do
-    @spaces = Space.where(host_id: params[:id])
+    @user = User.find(params[:id])
     @bookings = []
-    @spaces.each { |space| @bookings += Booking.where(space_id: space.id) }
-    p @bookings
+    @user.spaces.each { |space| @bookings += space.bookings }
     erb :'users/bookings'
   end
 
