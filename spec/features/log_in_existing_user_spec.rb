@@ -1,10 +1,8 @@
 feature 'user login' do
   scenario 'user signs up' do
     visit '/'
-    click_link 'Sign Up'
-    expect(current_path).to eq '/users/new'
     fill_in 'username', with: 'cool_kevin'
-    click_button 'Submit'
+    click_button "Let's go"
     
     user = User.all.first
     expect(user.username).to eq 'cool_kevin'
@@ -13,8 +11,9 @@ feature 'user login' do
   scenario 'existing user logs in' do
     User.create(username: 'cooler_brad')
     visit '/'
+    click_link 'Existing users sign in'
     fill_in 'username', with: 'cooler_brad'
-    click_button 'Submit'
+    click_button 'Log in'
     expect(current_path).to eq '/spaces'
     expect(page).to have_content('Welcome back, cooler_brad!')
   end
