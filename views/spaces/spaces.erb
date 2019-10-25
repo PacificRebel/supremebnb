@@ -8,41 +8,7 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  </head>
  <body>
-   <div class="container">
-   <div class="row">
-     <div class="col">
 
-     </div>
-     <div class="col-15">
-       <% if @user %>
-         <h1>Welcome back, <%= @user.username %>!</h1>
-       <% end %>
-         <h3> Find a space </h3>
-     </div>
-     <div class="col">
-
-     </div>
-   </div>
-   <div class="row">
-     <div class="col">
-
-     </div>
-     <div class="col-8">
-       <% if @user %>
-         <a href=/users/<%= @user.id %>/bookings type='submit' name='book'>Your bookings</a>
-         <a href=/spaces/new type='submit' name='book'>List your space</a>
-       <% end %>
-
-       <form action='/spaces'>
-         <label for='date-of-stay'>Date</label>
-         <input id='date-of-stay' type='date' name='date' value=<%= @date %>>
-         <button type='submit' value='Submit'>Submit</button>
-       </form>
-     <div class="col">
-
-     </div>
-     </div>
-   </div>
    <div class="row">
     <div class="col">
     </div>
