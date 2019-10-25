@@ -1,8 +1,8 @@
 (function() {
   window.addEventListener('load', function() {
-    login = $('#login-form')
-    signup = $('#signup-form')
-    link = $('#switch-form')
+    var login = $('#login-form')
+    var signup = $('#signup-form')
+    var link = $('#switch-form')
     login.toggle()
 
     switchLogin = new SwitchLogin(login, signup, link)  
